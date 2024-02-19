@@ -1,4 +1,217 @@
+@import 'functions';
+
+$factor : 2;
+$white : #FBFBFB;
+$black : #060606;
+
 * {
     margin: 0;
     padding: 0;
+    font-family: "Work Sans";
+    color: $black;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    background-color: $white;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.display-none {
+    display: none;
+}
+
+.show-mobile {
+    display: block;
+    @media only screen and (min-width: 860px) {
+        display: none;
+    }
+}
+
+.hide-mobile {
+    display: none;
+    @media only screen and (min-width: 502px) {
+        display: initial;
+    }
+}
+
+.main-panel {
+    padding: 56px 24px 24px 24px;
+    transition: padding ease 0.2s;
+
+    @media only screen and (min-width: 1200px) {
+        padding: 56px 64px;
+    }
+
+    @media only screen and (min-width: 2000px) {
+        width: 73%;
+        display: flex;
+        padding: sizeFactor(80px);
+        box-sizing: border-box;
+        align-items: center;
+    }
+}
+
+.logo {
+    a {
+        display: inline-block;
+
+    }
+
+    svg {
+        width: sizeFactor(64px);
+        height: sizeFactor(64px);
+        display: block;
+        margin-bottom: sizeFactor(24px);
+    
+        @media only screen and (min-width: 1400px) {
+            width: sizeFactor(72px);
+            height: sizeFactor(72px);
+            margin-bottom: sizeFactor(32px);
+        }
+    }
+}
+
+h1 {
+    font-weight: 600;
+    font-size: sizeFactor(32px);
+    letter-spacing: -1.5px;
+    margin-bottom: sizeFactor(16px);
+    line-height: 1.12;
+
+    @media only screen and (min-width: 860px) {
+        font-size: sizeFactor(36px);
+    }
+
+    @media only screen and (min-width: 1400px) {
+        font-size: sizeFactor(40px);
+        line-height: 1;
+    }
+    
+
+    .divider {
+        font-size: sizeFactor(32px);
+        padding: 0 8px;
+    }
+
+    a {
+        color: $black;
+        text-decoration: none;
+        border-bottom: 6px solid $white;
+        transition: border-bottom ease-out 0.3s, padding-bottom ease-out 0.3s;
+        box-sizing: border-box;
+        padding-bottom: 0px;
+
+        &:hover {
+            border-bottom: 6px solid $black;
+            padding-bottom: 4px;
+        }
+    }
+}
+
+.intro {
+    font-weight: 300;
+    font-size: sizeFactor(12px);
+    line-height: 1.4;
+    margin-bottom: sizeFactor(16px);
+    transition: font-size ease-out 0.25s;
+
+    @media only screen and (min-width: 640px) {
+        font-size: sizeFactor(16px);
+    }
+
+    @media only screen and (min-width: 1400px) {
+        font-size: sizeFactor(16px);
+        letter-spacing: 1px;
+        width: 100%;        
+    }
+
+    p:first-child {
+        margin-bottom: sizeFactor(8px);
+
+        @media only screen and (min-width: 1400px) {
+            margin-bottom: sizeFactor(4px);
+        }
+    }
+}
+
+.side-panel {
+    display: none;
+
+    @media only screen and (min-width: 2000px) {
+        display: block;
+        flex-grow: 1;
+        background-color: green;
+        min-height: 100%;
+    }
+    
+}
+
+nav ul {
+    margin-bottom: 24px;
+
+    @media only screen and (min-width: 1400px) {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    li {
+        list-style: none;
+        // margin-bottom: 16px;
+
+        @media only screen and (min-width: 1400px) {
+            margin-right: sizeFactor(32px);
+            margin-bottom: 16px;
+        }
+
+        a {
+            font-size: sizeFactor(12px);
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            list-style-position: inside;
+            color: $black;
+            border-bottom: 5px solid $white;
+            padding: 0 2px 0 4px;
+            transition: 
+                border-bottom ease-out 0.22s, 
+                padding-bottom ease-out 0.3s,
+                font-size ease-out 0.1s;
+            padding-bottom: 0px;
+            box-sizing: border-box;
+            line-height: 56px;
+
+            @media only screen and (min-width: 640px) {
+                font-size: sizeFactor(14px);
+            }
+
+            @media only screen and (min-width: 1400px) {
+                font-size: sizeFactor(16px);
+            }
+
+            @media only screen and (min-width: 1400px) {
+                &:hover {
+                    border-bottom: 5px solid $black;
+                    padding-bottom: 4px;
+                }
+            }
+        }
+    }
+}
+
+.content {
+    font-size: sizeFactor(16px);
+    line-height: sizeFactor(22px);
+
+    p {
+        margin-bottom: sizeFactor(16px);
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
 }
