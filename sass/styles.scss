@@ -4,6 +4,16 @@ $factor : 2;
 $white : #FBFBFB;
 $black : #060606;
 
+// Media queries
+
+$breakpoint-01 : 513px;
+$breakpoint-02 : 890px;
+$breakpoint-03 : 1200px;
+$breakpoint-04 : 1400px;
+$breakpoint-05 : 1719px;
+
+// END Media queries
+
 * {
     margin: 0;
     padding: 0;
@@ -27,32 +37,38 @@ strong {
 
 .show-mobile {
     display: block;
-    @media only screen and (min-width: 860px) {
+
+    @media only screen and (min-width: $breakpoint-02) {
         display: none;
     }
 }
 
 .hide-mobile {
     display: none;
-    @media only screen and (min-width: 513px) {
+
+    @media only screen and (min-width: $breakpoint-01) {
         display: initial;
     }
 }
 
 .main-panel {
-    padding: 56px 24px 24px 24px;
+    padding: 32px 24px;
     transition: padding ease 0.2s;
 
-    @media only screen and (min-width: 1200px) {
-        padding: 56px 64px;
-    }
-
-    @media only screen and (min-width: 2000px) {
-        width: 73%;
-        display: flex;
-        padding: sizeFactor(80px);
+    @media only screen and (min-width: $breakpoint-02) {
+        padding: 48px;
         box-sizing: border-box;
         align-items: center;
+        display: flex;    
+    }
+
+    @media only screen and (min-width: $breakpoint-03) {
+        padding: 56px 64px;    
+    }
+
+    @media only screen and (min-width: $breakpoint-05) {
+        width: 73%;
+        padding: 56px 64px; 
     }
 }
 
@@ -67,12 +83,6 @@ strong {
         height: sizeFactor(64px);
         display: block;
         margin-bottom: sizeFactor(24px);
-    
-        @media only screen and (min-width: 1400px) {
-            width: sizeFactor(72px);
-            height: sizeFactor(72px);
-            margin-bottom: sizeFactor(32px);
-        }
     }
 }
 
@@ -83,15 +93,13 @@ h1 {
     margin-bottom: sizeFactor(16px);
     line-height: 1.12;
 
-    @media only screen and (min-width: 860px) {
+    @media only screen and (min-width: $breakpoint-02) {
         font-size: sizeFactor(36px);
     }
 
-    @media only screen and (min-width: 1400px) {
+    @media only screen and (min-width: $breakpoint-04) {
         font-size: sizeFactor(40px);
-        line-height: 1;
     }
-    
 
     .divider {
         font-size: sizeFactor(32px);
@@ -120,11 +128,7 @@ h1 {
     margin-bottom: sizeFactor(16px);
     transition: font-size ease-out 0.25s;
 
-    @media only screen and (min-width: 640px) {
-        font-size: sizeFactor(16px);
-    }
-
-    @media only screen and (min-width: 1400px) {
+    @media only screen and (min-width: $breakpoint-04) {
         font-size: sizeFactor(16px);
         letter-spacing: 1px;
         width: 100%;        
@@ -133,7 +137,7 @@ h1 {
     p:first-child {
         margin-bottom: sizeFactor(8px);
 
-        @media only screen and (min-width: 1400px) {
+        @media only screen and (min-width: $breakpoint-04) {
             margin-bottom: sizeFactor(4px);
         }
     }
@@ -146,7 +150,7 @@ h1 {
 .side-panel {
     display: none;
 
-    @media only screen and (min-width: 2000px) {
+    @media only screen and (min-width: $breakpoint-05) {
         display: block;
         flex-grow: 1;
         background-color: green;
@@ -157,7 +161,7 @@ h1 {
 nav ul {
     margin-bottom: 24px;
 
-    @media only screen and (min-width: 1400px) {
+    @media only screen and (min-width: $breakpoint-03) {
         width: 100%;
         display: flex;
         justify-content: flex-start;
@@ -165,15 +169,14 @@ nav ul {
 
     li {
         list-style: none;
-        // margin-bottom: 16px;
 
-        @media only screen and (min-width: 1400px) {
-            margin-right: sizeFactor(32px);
+        @media only screen and (min-width: $breakpoint-03) {
+            margin-right: sizeFactor(24px);
             margin-bottom: 16px;
         }
 
         a {
-            font-size: sizeFactor(12px);
+            font-size: sizeFactor(14px);
             letter-spacing: 2px;
             font-weight: 700;
             text-transform: uppercase;
@@ -190,15 +193,11 @@ nav ul {
             box-sizing: border-box;
             line-height: 56px;
 
-            @media only screen and (min-width: 640px) {
-                font-size: sizeFactor(14px);
-            }
-
-            @media only screen and (min-width: 1400px) {
+            @media only screen and (min-width: $breakpoint-04) {
                 font-size: sizeFactor(16px);
             }
 
-            @media only screen and (min-width: 1400px) {
+            @media only screen and (min-width: $breakpoint-04) {
                 &:hover {
                     border-bottom: 5px solid $black;
                     padding-bottom: 4px;
@@ -228,34 +227,68 @@ nav ul {
 }
 
 .gallery {
+    box-sizing: border-box;
+    display: block;
 
-    a {
-        position: relative;
-        width: 100%;        
-        height: calc(100vw / 3);
+    img {
+        width: 100%;
         display: block;
-        overflow: hidden;
+        margin-bottom: 24px;
         box-sizing: border-box;
-        margin-bottom: 32px;
-        border: 0 solid $white;
-        transition: border ease-in-out 0.4s;
+        border: 0px solid $white;
+        transition: border ease-in-out 0.25s;
 
-        @media only screen and (min-width: 860px) {
-            height: calc(100vw / 3) + calc(100vw / 30);
-            border: calc(100vw / 30) solid $white;
+        @media only screen and (min-width: $breakpoint-01) {
+            border: 16px solid $white;
         }
 
-        img {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            height: 150%;
-            transform: translate(-50%, -50%);
-            transition: height ease-in-out 0.4s;
+        @media only screen and (min-width: 1060px) {
+            border: 24px solid $white;
+        }
 
-            @media only screen and (min-width: 640px) {
-                height: 100%;
-            }
+        @media only screen and (min-width: $breakpoint-03) {
+            border: 56px solid $white;
+        }
+
+        @media only screen and (min-width: 1290px) {
+            border: 72px solid $white;
         }
     }
+
+    // a {
+    //     position: relative;
+    //     width: 100%;
+    //     // height: calc(100vw / 3.5) + calc(100vw / 50);
+    //     height: 33%;
+    //     display: block;
+    //     overflow: hidden;
+    //     box-sizing: border-box;
+    //     margin-bottom: 32px;
+    //     // border: calc(100vw / 50) solid $white;
+    //     transition: border ease-in-out 0.4s;
+
+    //     // @media only screen and (min-width: $breakpoint-03) {
+    //     //     height: calc(100vw / 3.5) + calc(100vw / 40);
+    //     //     border: calc(100vw / 40) solid $white;
+    //     // }
+
+    //     // @media only screen and (min-width: $breakpoint-04) {
+    //     //     height: calc(100vw / 3.6) + calc(100vw / 30);
+    //     //     border: calc(100vw / 30) solid $white;
+    //     // }
+
+    //     // @media only screen and (min-width: $breakpoint-05) {
+    //     //     height: calc(73vw / 3.5) + calc(100vw / 25);
+    //     //     border: calc(73vw / 25) solid $white;
+    //     // }
+
+    //     img {
+    //         position: absolute;
+    //         left: 50%;
+    //         top: 50%;
+    //         height: 100%;
+    //         transform: translate(-50%, -50%);
+    //         transition: height ease-in-out 0.4s;
+    //     }
+    // }
 }

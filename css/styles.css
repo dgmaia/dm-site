@@ -22,7 +22,7 @@ strong {
 .show-mobile {
   display: block;
 }
-@media only screen and (min-width: 860px) {
+@media only screen and (min-width: 890px) {
   .show-mobile {
     display: none;
   }
@@ -38,21 +38,26 @@ strong {
 }
 
 .main-panel {
-  padding: 56px 24px 24px 24px;
+  padding: 32px 24px;
   transition: padding ease 0.2s;
+}
+@media only screen and (min-width: 890px) {
+  .main-panel {
+    padding: 48px;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+  }
 }
 @media only screen and (min-width: 1200px) {
   .main-panel {
     padding: 56px 64px;
   }
 }
-@media only screen and (min-width: 2000px) {
+@media only screen and (min-width: 1719px) {
   .main-panel {
     width: 73%;
-    display: flex;
-    padding: 160px;
-    box-sizing: border-box;
-    align-items: center;
+    padding: 56px 64px;
   }
 }
 
@@ -65,13 +70,6 @@ strong {
   display: block;
   margin-bottom: 48px;
 }
-@media only screen and (min-width: 1400px) {
-  .logo svg {
-    width: 144px;
-    height: 144px;
-    margin-bottom: 64px;
-  }
-}
 
 h1 {
   font-weight: 600;
@@ -80,7 +78,7 @@ h1 {
   margin-bottom: 32px;
   line-height: 1.12;
 }
-@media only screen and (min-width: 860px) {
+@media only screen and (min-width: 890px) {
   h1 {
     font-size: 72px;
   }
@@ -88,7 +86,6 @@ h1 {
 @media only screen and (min-width: 1400px) {
   h1 {
     font-size: 80px;
-    line-height: 1;
   }
 }
 h1 .divider {
@@ -115,11 +112,6 @@ h1 a:hover {
   margin-bottom: 32px;
   transition: font-size ease-out 0.25s;
 }
-@media only screen and (min-width: 640px) {
-  .intro {
-    font-size: 32px;
-  }
-}
 @media only screen and (min-width: 1400px) {
   .intro {
     font-size: 32px;
@@ -142,7 +134,7 @@ h1 a:hover {
 .side-panel {
   display: none;
 }
-@media only screen and (min-width: 2000px) {
+@media only screen and (min-width: 1719px) {
   .side-panel {
     display: block;
     flex-grow: 1;
@@ -154,7 +146,7 @@ h1 a:hover {
 nav ul {
   margin-bottom: 24px;
 }
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1200px) {
   nav ul {
     width: 100%;
     display: flex;
@@ -164,14 +156,14 @@ nav ul {
 nav ul li {
   list-style: none;
 }
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1200px) {
   nav ul li {
-    margin-right: 64px;
+    margin-right: 48px;
     margin-bottom: 16px;
   }
 }
 nav ul li a {
-  font-size: 24px;
+  font-size: 28px;
   letter-spacing: 2px;
   font-weight: 700;
   text-transform: uppercase;
@@ -184,11 +176,6 @@ nav ul li a {
   padding-bottom: 0px;
   box-sizing: border-box;
   line-height: 56px;
-}
-@media only screen and (min-width: 640px) {
-  nav ul li a {
-    font-size: 28px;
-  }
 }
 @media only screen and (min-width: 1400px) {
   nav ul li a {
@@ -222,33 +209,35 @@ nav ul li a {
   }
 }
 
-.gallery a {
-  position: relative;
-  width: 100%;
-  height: 33.3333333333vw;
-  display: block;
-  overflow: hidden;
+.gallery {
   box-sizing: border-box;
-  margin-bottom: 32px;
-  border: 0 solid #FBFBFB;
-  transition: border ease-in-out 0.4s;
+  display: block;
 }
-@media only screen and (min-width: 860px) {
-  .gallery a {
-    height: 36.6666666667vw;
-    border: 3.3333333333vw solid #FBFBFB;
+.gallery img {
+  width: 100%;
+  display: block;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  border: 0px solid #FBFBFB;
+  transition: border ease-in-out 0.25s;
+}
+@media only screen and (min-width: 513px) {
+  .gallery img {
+    border: 16px solid #FBFBFB;
   }
 }
-.gallery a img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 150%;
-  transform: translate(-50%, -50%);
-  transition: height ease-in-out 0.4s;
+@media only screen and (min-width: 1060px) {
+  .gallery img {
+    border: 24px solid #FBFBFB;
+  }
 }
-@media only screen and (min-width: 640px) {
-  .gallery a img {
-    height: 100%;
+@media only screen and (min-width: 1200px) {
+  .gallery img {
+    border: 56px solid #FBFBFB;
+  }
+}
+@media only screen and (min-width: 1290px) {
+  .gallery img {
+    border: 72px solid #FBFBFB;
   }
 }
