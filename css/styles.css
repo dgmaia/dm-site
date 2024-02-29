@@ -31,7 +31,7 @@ strong {
 .hide-mobile {
   display: none;
 }
-@media only screen and (min-width: 502px) {
+@media only screen and (min-width: 513px) {
   .hide-mobile {
     display: initial;
   }
@@ -135,6 +135,9 @@ h1 a:hover {
     margin-bottom: 8px;
   }
 }
+.intro strong {
+  white-space: nowrap;
+}
 
 .side-panel {
   display: none;
@@ -207,4 +210,45 @@ nav ul li a {
   margin-bottom: 32px;
   font-weight: 300;
   letter-spacing: 1px;
+}
+
+.separator {
+  padding: 0 8px;
+  display: none;
+}
+@media only screen and (min-width: 513px) {
+  .separator {
+    display: inline-block;
+  }
+}
+
+.gallery a {
+  position: relative;
+  width: 100%;
+  height: 33.3333333333vw;
+  display: block;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-bottom: 32px;
+  border: 0 solid #FBFBFB;
+  transition: border ease-in-out 0.4s;
+}
+@media only screen and (min-width: 860px) {
+  .gallery a {
+    height: 36.6666666667vw;
+    border: 3.3333333333vw solid #FBFBFB;
+  }
+}
+.gallery a img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 150%;
+  transform: translate(-50%, -50%);
+  transition: height ease-in-out 0.4s;
+}
+@media only screen and (min-width: 640px) {
+  .gallery a img {
+    height: 100%;
+  }
 }

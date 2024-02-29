@@ -34,7 +34,7 @@ strong {
 
 .hide-mobile {
     display: none;
-    @media only screen and (min-width: 502px) {
+    @media only screen and (min-width: 513px) {
         display: initial;
     }
 }
@@ -137,6 +137,10 @@ h1 {
             margin-bottom: sizeFactor(4px);
         }
     }
+
+    strong {
+        white-space: nowrap;
+    }
 }
 
 .side-panel {
@@ -148,7 +152,6 @@ h1 {
         background-color: green;
         min-height: 100%;
     }
-    
 }
 
 nav ul {
@@ -213,5 +216,46 @@ nav ul {
         margin-bottom: sizeFactor(16px);
         font-weight: 300;
         letter-spacing: 1px;
+    }
+}
+
+.separator {
+    padding: 0 8px;
+    display: none;
+    @media only screen and (min-width: 513px) {
+        display: inline-block;
+    }
+}
+
+.gallery {
+
+    a {
+        position: relative;
+        width: 100%;        
+        height: calc(100vw / 3);
+        display: block;
+        overflow: hidden;
+        box-sizing: border-box;
+        margin-bottom: 32px;
+        border: 0 solid $white;
+        transition: border ease-in-out 0.4s;
+
+        @media only screen and (min-width: 860px) {
+            height: calc(100vw / 3) + calc(100vw / 30);
+            border: calc(100vw / 30) solid $white;
+        }
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 150%;
+            transform: translate(-50%, -50%);
+            transition: height ease-in-out 0.4s;
+
+            @media only screen and (min-width: 640px) {
+                height: 100%;
+            }
+        }
     }
 }
